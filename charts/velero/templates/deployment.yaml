@@ -178,6 +178,9 @@ spec:
                   key: {{ default "none" $key }}
           {{- end }}
           {{- end }}
+        {{- if .Values.sidecarContainers }}
+          {{- toYaml .Values.sidecarContainers | nindent 8 }}
+        {{- end }}
       dnsPolicy: {{ .Values.dnsPolicy }}
 {{- if .Values.initContainers }}
       initContainers:
