@@ -182,6 +182,10 @@ spec:
           {{- toYaml .Values.sidecarContainers | nindent 8 }}
         {{- end }}
       dnsPolicy: {{ .Values.dnsPolicy }}
+      {{- with .Values.dnsConfig }}
+      dnsConfig:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
 {{- if .Values.initContainers }}
       initContainers:
         {{- toYaml .Values.initContainers | nindent 8 }}

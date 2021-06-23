@@ -49,6 +49,8 @@ resources:
 # See: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy
 dnsPolicy: ClusterFirst
 
+dnsConfig: {}
+
 # Additional containers to be added to the Velero deployment's pod spec.
 sidecarContainers: []
   # - name: my-sidecar
@@ -337,6 +339,8 @@ restic:
   # Configure the dnsPolicy of the Restic daemonset
   # See: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy
   dnsPolicy: ClusterFirst
+
+  dnsConfig: {}
 
   # SecurityContext to use for the Velero deployment. Optional.
   # Set fsGroup for `AWS IAM Roles for Service Accounts`
